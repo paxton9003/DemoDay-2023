@@ -1,0 +1,149 @@
+
+<div class="row pt-3">
+
+	<div class="col-sm-3">			
+
+	</div>
+
+	<div class="col-sm-6">
+
+		<div class="card">
+
+			<div class="card-header text-center">
+
+				<h3>Create Menu Item</h3>
+
+				<h5 class="text-success" ng-bind="createStatus"></h5>
+
+			</div>			
+
+			<div class="card-body">
+
+			<form name="createForm">
+
+				<div class="form-group">
+
+					<label for="menuName" class="font-weight-bold">Menu Name</label>
+
+					<input ng-model="foodItem.menuName" required ng-minlength="3" name="menuName"
+
+						type="text" class="form-control" id="menuName">					
+
+					<span ng-show="createForm.menuName.$touched && createForm.title.$invalid"
+
+						class="text-danger">
+
+						required and must be at least three characters.
+
+					</span>					
+
+				</div>
+
+				<div class="form-group">
+
+					<label for="foodType" class="font-weight-bold">Food Type</label>
+
+					<select ng-options="value for value in foodTypes" required name="foodType"
+
+						ng-model="foodItem.foodType" class="form-control" id="foodType">
+
+					</select>
+
+					<span ng-show="createForm.foodType.$touched && createForm.foodType.$invalid"
+
+						class="text-danger">
+
+						required
+
+					</span>	
+
+				</div>
+
+				<div class="form-group">
+
+					<label for="price" class="font-weight-bold">Price</label>
+
+					<input ng-model="foodItem.price" max="100" min="1" required
+
+						type="number" class="form-control" id="price" name="price">					
+
+					<span ng-show="createForm.price.$touched && createForm.price.$invalid"
+
+						class="text-danger">
+
+						required and must be between $1 and $100, inclusive
+
+					</span>	
+
+				</div>				
+
+			<div class="form-group">
+
+					<label for="vegan" class="font-weight-bold">Vegan</label>
+
+					<select ng-options="value for value in vegan" required name="vegan"
+
+						ng-model="foodItem.vegan" class="form-control" id="vegan">
+
+					</select>
+
+					<span ng-show="createForm.vegan.$touched && createForm.vegan.$invalid"
+
+						class="text-danger">
+
+						required
+
+					</span>	
+
+				</div>
+				
+				<div class="form-group">
+
+					<label for="caffeine" class="font-weight-bold">Caffeine</label>
+
+					<select ng-options="value for value in hasCaffeine" required name="caffeine"
+
+						ng-model="foodItem.caffeine" class="form-control" id="caffeine">
+
+					</select>
+
+					<span ng-show="createForm.caffeine.$touched && createForm.caffeine.$invalid"
+
+						class="text-danger">
+
+						required
+
+					</span>	
+
+				</div>
+			
+			
+			</form>
+
+		</div>
+		
+		
+
+		<div class="card-footer text-center">
+
+			<button type="button" class="btn btn-success"
+
+				ng-disabled="createForm.$invalid || disableCreate"
+
+				ng-click="createFoodItem()">Create</button>			
+
+			<button type="button" class="btn btn-info"
+
+				ng-click="clear()">Clear</button>
+
+		</div>
+
+		</div>
+
+	</div>
+
+	<div class="col-sm-3">			
+
+	</div>
+
+</div>

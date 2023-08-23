@@ -1,0 +1,121 @@
+
+<div class="row">
+
+
+	<div class="col-sm-7 display:flex">
+
+		<div class="card bg-light">
+
+			<div class="card-header text-center">
+
+				<h3>Update Menu Item</h3>
+				<p ng-bind="updateStatus" class="text-success"></p>
+
+			</div>
+
+
+
+			<div class="card-body">
+
+				<form name="updateForm">
+
+					<div class="form-group">
+
+						<label for="menuName" class="font-weight-bold">Menu Name</label> <input
+							ng-model="foodItem.menuName" required ng-minlength="3"
+							name="menuName" type="text" class="form-control" id="menuName">
+						<span class="text-danger" ng-if="!updateForm.menuName.$valid">Menu
+							Name must be at least 3 or more characters.</span>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="foodType" class="font-weight-bold">Food Type</label> <select
+							ng-options="value for value in foodTypes"
+							ng-model="foodItem.foodType" class="form-control" id="foodType">
+
+						</select>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="price" class="font-weight-bold">price</label> <input
+							ng-model="foodItem.price" max="100" min="1" required name="price"
+							type="number" class="form-control" id="price"> <span
+							class="text-danger" ng-if="!updateForm.price.$valid">Price
+							must be between $1 and $100</span>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="vegan" class="font-weight-bold">Vegan</label> <select
+							ng-options="value for value in vegan" ng-model="foodItem.vegan"
+							class="form-control" id="vegan">
+
+
+						</select>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="caffeine" class="font-weight-bold">Caffeinated</label>
+
+						<select ng-options="value for value in caffeine"
+							ng-model="foodItem.hasCaffeine" class="form-control"
+							id="caffeine">
+
+						</select>
+
+					</div>
+
+
+
+					<div>
+
+						<span class="font-weight-bold">Food ID:</span> <span
+							ng-bind="foodItem.id" id="id"></span>
+
+					</div>
+
+					<div>
+
+						<span class="font-weight-bold">Create Date:</span> <span
+							ng-bind="foodItem.createDateTime" id="create"></span>
+
+					</div>
+
+					<div>
+
+						<span class="font-weight-bold">Update Date:</span> <span
+							ng-bind="foodItem.updateDateTime" id="update"></span>
+
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="card-footer text-center">
+
+				<button type="button" class="btn btn-success"
+					ng-disabled="updateForm.$invalid || disableUpdate"
+					ng-click="updateFoodItem()">Update</button>
+
+				<button type="button" class="btn btn-danger"
+					ng-disabled="disableUpdate" ng-click="deleteFoodItem()">
+					Delete</button>
+
+				<button type="button" class="btn btn-info"
+					ng-click="goToSearchView()">Cancel</button>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

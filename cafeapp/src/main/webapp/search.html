@@ -1,0 +1,34 @@
+<div class="text-white">
+	<h1 class="text-center">Search</h1>
+	<h3 class="text-center">Click on an item row to update item.</h3>
+</div>
+<br>
+<div class="card">
+
+	<div class="table-striped card-body bg-light">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Item ID</th>
+					<th>Price</th>
+					<th>Menu Name</th>
+					<th>Food Type</th>
+					<th>Caffeinated</th>
+					<th>Vegan</th>
+					<th>Create Date</th>
+				</tr>
+				<tr ng-repeat="foodItem in foodItems"
+					ng-click="goToUpdateView(foodItem.id)">
+					<td>{{foodItem.id}}</td>
+					<td>${{foodItem.price}}</td>
+					<td>{{foodItem.menuName}}</td>
+					<td>{{foodItem.foodType}}</td>
+					<td>{{foodItem.hasCaffeine}}</td>
+					<td>{{foodItem.vegan}}</td>
+					<td>{{foodItem.createDateTime | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<br>

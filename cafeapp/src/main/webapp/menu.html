@@ -1,0 +1,33 @@
+<div id ="breakfastbackground">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 bg-light">
+     <h2>Menu Items</h2>
+     <hr>
+      <h3>Breakfast</h3>
+      	 <div ng-repeat="breakfastItem in breakfastItems">
+        <p class="col-sm-6 bg-light" id="border">{{breakfastItem.menuName}} - ${{breakfastItem.price}}</p>
+   </div>
+      
+      <h3>Coffee / Drinks</h3>
+      	 <div ng-repeat="drinkItem in drinkItems">
+        <p class="col-sm-6 bg-light" id="border">{{drinkItem.menuName}} - ${{drinkItem.price}}</p>
+   </div>
+      
+       <h3>Dessert</h3>
+        <div ng-repeat="dessertItem in foodDessertItems">
+        <p class="col-sm-6 bg-light" id="border">{{dessertItem.menuName}} - ${{dessertItem.price}}</p>
+   </div>
+     
+      <h3>Vegan Options</h3>
+      <div ng-repeat="veganItem in foodVeganItems">
+        <p class="col-sm-6 bg-light" id="border">{{veganItem.menuName}} - ${{veganItem.price}}</p>
+   </div>
+   
+    </div>
+   
+    <div class="col-sm-8"></div>
+</div>
+  </div>
+</div>

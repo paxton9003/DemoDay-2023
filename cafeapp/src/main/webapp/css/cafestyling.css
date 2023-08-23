@@ -1,0 +1,56 @@
+@charset "ISO-8859-1";
+
+#textcenter {
+	text-align: center;
+}
+
+#jumbotron {
+	background: rgb(39, 30, 24)
+		url("https://media.istockphoto.com/id/1130676331/photo/empty-dark-wooden-table-in-front-of-abstract-blurred-bokeh-background-of-restaurant-can-be.jpg?s=612x612&w=0&k=20&c=3Ve4XXUCe-aPlDaOTOjmEmbSJilDpEhar_afZU0cURM=")
+		no-repeat fixed center;
+	background-size: cover;
+	padding: 10px;
+}
+
+#stackcards {
+	padding: 10px;
+}
+
+#hr {
+	height: 2px;
+	background-color: #FFFFFF;
+	border: none;
+}
+
+#colorlightbrown {
+	background-color: #503c31;
+}
+
+#colordarkbrown {
+	background-color: #25201d;
+}
+
+#border {
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#breakfastbackground {
+	background: lightblue
+		url("https://www.tastingtable.com/img/gallery/breakfast-recipes/l-intro-1651937325.jpg")
+		no-repeat fixed center;
+	background-size: cover;
+}
+
+#logoimage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#jumbo {
+	
+}
